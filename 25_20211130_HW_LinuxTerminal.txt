@@ -1,0 +1,70 @@
+Andrea@Andre MINGW32 /d/Test
+$ pwd
+/d/Test
+
+Andrea@Andre MINGW32 /d/Test
+$ mkdir folder_1
+
+Andrea@Andre MINGW32 /d/Test
+$ cd folder_1
+
+Andrea@Andre MINGW32 /d/Test/folder_1
+$ pwd
+/d/Test/folder_1
+
+Andrea@Andre MINGW32 /d/Test/folder_1
+$ mkdir dir_1 dir_2 dir_3
+
+Andrea@Andre MINGW32 /d/Test/folder_1
+$ cd dir_1
+
+Andrea@Andre MINGW32 /d/Test/folder_1/dir_1
+$ pwd
+/d/Test/folder_1/dir_1
+
+Andrea@Andre MINGW32 /d/Test/folder_1/dir_1
+$ cd test_1
+
+Andrea@Andre MINGW32 /d/Test/folder_1/dir_1
+$ touch test_1.txt
+
+Andrea@Andre MINGW32 /d/Test/folder_1/dir_1
+$ > test_2.json
+
+Andrea@Andre MINGW32 /d/Test/folder_1/dir_1
+$ ls
+test_1.txt  test_2.json
+
+Andrea@Andre MINGW32 /d/Test/folder_1/dir_1
+$ mkdir test_3
+
+Andrea@Andre MINGW32 /d/Test/folder_1/dir_1
+$ mv test_1.txt test_3/test_1.txt
+
+Andrea@Andre MINGW32 /d/Test/folder_1/dir_1
+$ cd test_3
+
+Andrea@Andre MINGW32 /d/Test/folder_1/dir_1/test_3
+$ ls
+test_1.txt
+
+Andrea@Andre MINGW32 /d/Test/folder_1/dir_1/test_3
+$ rm test_1.txt
+
+Andrea@Andre MINGW32 /d/Test/folder_1/dir_1/test_3
+$ ls
+
+Andrea@Andre MINGW32 /d/Test/folder_1/dir_1/test_3
+$ cd ../..
+
+Andrea@Andre MINGW32 /d/Test/folder_1/dir_1/test_3
+$ cd ../..
+
+Andrea@Andre MINGW32 /d/Test/folder_1
+$ rm -r dir_1/ dir_2/ dir_3/
+
+Andrea@Andre MINGW32 /d/Test/folder_1
+$ ls -a
+./  ../
+
+----------------------------------------
