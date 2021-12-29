@@ -47,7 +47,7 @@ select * from students
 where id='153';
 -- 19. ¬ывести пользовател€ у которых id больше 140
 select * from students
-where id>'153';
+where id>'140';
 -- 20. ¬ывести пользовател€ у которых id меньше 130
 select * from students
 where id<'130';
