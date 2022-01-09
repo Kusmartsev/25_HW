@@ -285,7 +285,7 @@ values
 (2, 6);
 
 
---=======================================2_ДЗ_SQL============================
+--=======================================3_ДЗ_SQL============================
 
 --1. Вывести всех работников чьи зарплаты есть в базе, вместе с зарплатами.
 
@@ -304,27 +304,35 @@ where S.monthly_salary < 2000;
 
  --3. Вывести все зарплатные позиции, но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
 
-select E.employee_name, S.monthly_salary 
+/*select E.employee_name, S.monthly_salary 
 from employee_salary ES
 left join employees E on ES.employee_id=E.id
 join salary S on ES.salary_id=S.id
-where E.employee_name is null;
+where E.employee_name is null;*/
+
+select S.monthly_salary, E.employee_name from salary S 
+left join employee_salary ES on ES.salary_id = S.id
+left join employees E on ES.employee_id = E.id
+where ES.employee_id is null;
 
  --4. Вывести все зарплатные позиции  меньше 2000 но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
 
-select E.employee_name, S.monthly_salary 
-from employee_salary ES
-left join employees E on ES.employee_id=E.id
-join salary S on ES.salary_id=S.id
-where E.employee_name is null and S.monthly_salary < 2000;
+select S.monthly_salary, E.employee_name from salary S 
+left join employee_salary ES on ES.salary_id = S.id
+left join employees E on ES.employee_id = E.id
+where ES.employee_id is null and S.monthly_salary < 2000;
 
  --5. Найти всех работников кому не начислена ЗП.
 
-select E.employee_name, S.monthly_salary
-from employee_salary ES
-left join employees E on ES.employee_id=E.id
+/*select E.employee_name, S.monthly_salary from employee_salary ES
 join salary S on ES.salary_id=S.id
-where E.employee_name is null;
+left join employees E on ES.employee_id=E.id
+where S.monthly_salary is null;*/
+
+select E.employee_name, S.monthly_salary from employees E
+left join employee_salary ES on ES.employee_id=E.id
+left join salary S on ES.salary_id=S.id
+where S.monthly_salary is null;
 
  --6. Вывести всех работников с названиями их должности.
 
@@ -475,33 +483,54 @@ where R.role_name like '%Junior%' and S.monthly_salary is not null;
 
  --22. Вывести сумму зарплат JS разработчиков
 
-select sum(S.monthly_salary)
+/*select sum(S.monthly_salary)
 from roles_employee RE
 left join employee_salary ES on RE.employee_id=ES.employee_id
 left join roles R on RE.role_id=R.id
 left join employees E on RE.employee_id=E.id
 left join salary S on ES.salary_id=S.id
-where R.role_name like '%JavaSkript%' and S.monthly_salary is not null;
+where R.role_name like '%JavaSkript%' and S.monthly_salary is not null;*/
+
+select sum(monthly_salary) from employees E
+left join employee_salary ES on ES.employee_id = E.id
+left join salary S on ES.salary_id = S.id
+join roles_employee RE on RE.employee_id = E.id
+join roles R on RE.role_id = R.id
+where role_name like '%JavaScript developer%'
+;
 
  --23. Вывести минимальную ЗП QA инженеров
 
-select min(S.monthly_salary)
-from roles_employee RE
+/*select min(S.monthly_salary) from roles_employee RE
 left join employee_salary ES on RE.employee_id=ES.employee_id
 left join roles R on RE.role_id=R.id
 left join employees E on RE.employee_id=E.id
 left join salary S on ES.salary_id=S.id
-where R.role_name like '%QA engineer %' and S.monthly_salary is not null;
+where R.role_name like '%QA engineer %' and S.monthly_salary is not null*/;
+
+select min(S.monthly_salary) from employees E
+join employee_salary ES on ES.employee_id=E.id
+join salary S on ES.salary_id=S.id
+join roles_employee RE on RE.employee_id=E.id
+join roles R on RE.role_id=R.id
+where R.role_name like '%QA engineer %';
 
  --24. Вывести максимальную ЗП QA инженеров
 
-select max(S.monthly_salary)
+/*select max(S.monthly_salary)
 from roles_employee RE
 left join employee_salary ES on RE.employee_id=ES.employee_id
 left join roles R on RE.role_id=R.id
 left join employees E on RE.employee_id=E.id
 left join salary S on ES.salary_id=S.id
-where R.role_name like '%QA engineer %' and S.monthly_salary is not null;
+where R.role_name like '%QA engineer %' and S.monthly_salary is not null;*/
+
+select max(S.monthly_salary) from employees E
+join employee_salary ES on ES.employee_id=E.id
+join salary S on ES.salary_id=S.id
+join roles_employee RE on RE.employee_id=E.id
+join roles R on RE.role_id=R.id
+where R.role_name like '%QA engineer %';
 
  --25. Вывести количество QA инженеров
 
@@ -532,13 +561,19 @@ where R.role_name like '% developer%';
 
  --28. Вывести фонд (сумму) зарплаты разработчиков.
 
-select sum(S.monthly_salary)
-from roles_employee RE
+/*select sum(S.monthly_salary) from roles_employee RE
 left join employee_salary ES on RE.employee_id=ES.employee_id
 join roles R on RE.role_id=R.id
 join employees E on RE.employee_id=E.id
 join salary S on ES.salary_id=S.id
-where S.monthly_salary is not null;
+where role_name like '%developer%'*/;
+
+select sum(monthly_salary) from employees
+join employee_salary on employee_salary.employee_id = employees.id
+join salary on employee_salary.salary_id = salary.id
+join roles_employee on roles_employee.employee_id = employees.id
+join roles on roles_employee.role_id = roles.id
+where role_name like '%developer%';
 
  --29. Вывести имена, должности и ЗП всех специалистов по возрастанию
 
