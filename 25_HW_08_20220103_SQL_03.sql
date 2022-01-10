@@ -483,54 +483,30 @@ where R.role_name like '%Junior%' and S.monthly_salary is not null;
 
  --22. Вывести сумму зарплат JS разработчиков
 
-/*select sum(S.monthly_salary)
-from roles_employee RE
-left join employee_salary ES on RE.employee_id=ES.employee_id
-left join roles R on RE.role_id=R.id
-left join employees E on RE.employee_id=E.id
-left join salary S on ES.salary_id=S.id
-where R.role_name like '%JavaSkript%' and S.monthly_salary is not null;*/
-
 select sum(monthly_salary) from employees E
 left join employee_salary ES on ES.employee_id = E.id
 left join salary S on ES.salary_id = S.id
 join roles_employee RE on RE.employee_id = E.id
 join roles R on RE.role_id = R.id
-where role_name like '%JavaScript developer%'
-;
+where role_name like '%JavaScript developer%';
 
  --23. Вывести минимальную ЗП QA инженеров
 
-/*select min(S.monthly_salary) from roles_employee RE
-left join employee_salary ES on RE.employee_id=ES.employee_id
-left join roles R on RE.role_id=R.id
-left join employees E on RE.employee_id=E.id
-left join salary S on ES.salary_id=S.id
-where R.role_name like '%QA engineer %' and S.monthly_salary is not null*/;
-
 select min(S.monthly_salary) from employees E
-join employee_salary ES on ES.employee_id=E.id
+left join employee_salary ES on ES.employee_id=E.id
 join salary S on ES.salary_id=S.id
 join roles_employee RE on RE.employee_id=E.id
 join roles R on RE.role_id=R.id
-where R.role_name like '%QA engineer %';
+where R.role_name like '% QA engineer%';
 
  --24. Вывести максимальную ЗП QA инженеров
-
-/*select max(S.monthly_salary)
-from roles_employee RE
-left join employee_salary ES on RE.employee_id=ES.employee_id
-left join roles R on RE.role_id=R.id
-left join employees E on RE.employee_id=E.id
-left join salary S on ES.salary_id=S.id
-where R.role_name like '%QA engineer %' and S.monthly_salary is not null;*/
 
 select max(S.monthly_salary) from employees E
 join employee_salary ES on ES.employee_id=E.id
 join salary S on ES.salary_id=S.id
 join roles_employee RE on RE.employee_id=E.id
 join roles R on RE.role_id=R.id
-where R.role_name like '%QA engineer %';
+where R.role_name like '%QA engineer%';
 
  --25. Вывести количество QA инженеров
 
