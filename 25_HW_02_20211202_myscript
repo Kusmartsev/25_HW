@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo "Home Work 25"
+echo "Cоздать папку folder_2"
+mkdir /d/Test/folder_2
+echo "Зайти в папку folder_2"
+cd folder_2
+echo "Cоздать три папки в folder_2"
+mkdir dir_4 dir_5 dir_6
+echo "Перейти в папку dir_4"
+cd  dir_4
+echo "Создать пять файлов"
+touch  file_6.txt file_7.txt file_8.txt file_9.json file_10.json
+echo "Cодержимое папки"
+ls -l
+echo "Перемещение 2 файлов в dir_6"
+mv file_6.txt file_9.json /d/Test/folder_2/dir_6
+echo "Done"
+
+

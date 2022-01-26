@@ -1,0 +1,542 @@
+4. Создать внешний репозиторий c названием JSON2.
+
+https://github.com/Kusmartsev/JSON2.git
+
+ 5. Клонировать репозиторий JSON2 на локальный компьютер.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples
+$ git clone https://github.com/Kusmartsev/JSON2.git
+Cloning into 'JSON2'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+ 6. Внутри локального JSON2 создать файл “new2.json”.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples
+$ cd '/d/2 Работа/Testing/Git-examples/JSON2'
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/JSON2 (main)
+$ touch new2.json
+
+ 7. Добавить файл под гит.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/JSON2 (main)
+$ git add new2.json
+
+ 8. Закоммитить файл.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/JSON2 (main)
+$ git commit -m "git new file"
+[main 8b50bd2] git new file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 new2.json
+
+ 9. Отправить файл на внешний GitHub репозиторий.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/JSON2 (main)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 277 bytes | 13.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Kusmartsev/JSON2.git
+   7a67094..8b50bd2  main -> main
+
+ 10. Отредактировать содержание файла “new2.json” - 
+написать информацию о себе 
+(ФИО, возраст, количество домашних ""животных, будущая желаемая зарплата). 
+Всё написать в формате JSON.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/JSON (main)
+$ vim new2.json
+INSERT
+{
+        "Name": "Kusmartsev",
+        "Age": 46,
+        "Pets": 0,
+        "Salary": 1000
+}
+Esc
+:wq
+
+ 11. Отправить изменения на внешний репозиторий.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/JSON2 (main)
+$ git add new2.json
+warning: LF will be replaced by CRLF in new2.json.
+The file will have its original line endings in your working directory
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/JSON2 (main)
+$ git commit -m "changes early added file"
+[main bd9c093] changes early added file
+ 1 file changed, 6 insertions(+)
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/JSON2 (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 345 bytes | 57.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Kusmartsev/JSON2.git
+   8b50bd2..bd9c093  main -> main
+
+12. Создать файл preferences2.json
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/JSON (main)
+$ vim preferences2.json
+
+ 13. В файл preferences2.json добавить информацию 
+о своих предпочтениях (Любимый фильм, любимый сериал, 
+любимая еда, любимое время года, сторона которую хотели бы посетить) в формате JSON.
+-INSERT
+{
+        "Favourites": {"movie": "silence of the lambs",
+                "serial": "big bang theory",
+                "food": "spaghetty",
+                "season": "summer"}
+                "contry must see": "chile"
+}
+Esc
+:wq
+ 
+14. Создать файл sklls2.json добавить информацию 
+о скиллах которые будут изучены на курсе в формате JSON
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/JSON2 (main)
+$ vim skills2.json
+INSERT
+{
+        "skills": [
+                "Git",
+                "GitHub",
+                "Jmeter",
+                "Charles",
+                "Fiddler",
+                "Dev Tools",
+                "Android Studio"]
+}
+Esc
+:wq
+
+ 15. Отправить сразу 2 файла на внешний репозиторий.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/JSON2 (main)
+$ git add skills2.json preferences2.json
+warning: LF will be replaced by CRLF in preferences2.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in skills2.json.
+The file will have its original line endings in your working directory
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/JSON2 (main)
+$ git commit -m "two files commites to git"
+[main 68594e3] two files commites to git
+ 2 files changed, 17 insertions(+)
+ create mode 100644 preferences2.json
+ create mode 100644 skills2.json
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/JSON2 (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 572 bytes | 63.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Kusmartsev/JSON2.git
+   bd9c093..68594e3  main -> main
+
+ 16. На веб интерфейсе создать файл bug_report2.json.
+ 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+ 18. На веб интерфейсе модифицировать файл bug_report2.json, 
+добавить баг репорт в формате JSON.
+
+{
+"Title": "not possible to choose a delivery method",
+"ID": "01"
+"author": "Kusmartsev"
+"Steps to reproduce": 
+  { 
+  "01": "Select an item in the catalog",
+  "02": "add the item to the cart",
+  "03": "pay for the item by the 'Chekout' button",
+  "04": "click on the 'Delivery method' button"
+  }
+"actual result": "nothing happens on the page",
+"expected result" "the user chooses the delivery method",
+"severity": "blocker"
+}
+
+ 19. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+
+ 20. Синхронизировать внешний и локальный репозиторий JSON
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/JSON2 (main)
+$ git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 6 (delta 3), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), 1.50 KiB | 15.00 KiB/s, done.
+From https://github.com/Kusmartsev/JSON2
+   68594e3..9d0ca69  main       -> origin/main
+Updating 68594e3..9d0ca69
+Fast-forward
+ bug_report2.json | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+ create mode 100644 bug_report2.json
+
+-------------------------------------------------------------------------------
+ 21. Создать внешний репозиторий c названием XML2.
+https://github.com/Kusmartsev/XML2.git
+
+ 22. Клонировать репозиторий XML2 на локальный компьютер.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples
+$ git clone https://github.com/Kusmartsev/XML2.git
+Cloning into 'XML2'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+
+ 23. Внутри локального XML2 создать файл “new2.xml”.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples
+$ cd '/d/2 Работа/Testing/Git-examples/XML2'
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/XML2 (main)
+$ touch new2.xml
+
+ 24. Добавить файл под гит.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/XML2 (main)
+$ git add new2.xml
+
+ 25. Закоммитить файл.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/XML2 (main)
+$ git commit -m "first xml file commites"
+[main d5a1139] first xml file commites
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 new2.xml
+
+
+ 26. Отправить файл на внешний GitHub репозиторий.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/XML2 (main)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 282 bytes | 47.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Kusmartsev/XML2.git
+   17f50a1..d5a1139  main -> main
+
+ 27. Отредактировать содержание файла “new2.xml” - 
+написать информацию о себе (ФИО, возраст, 
+количество домашних животных, будущая желаемая зарплата). Всё написать в формате XML.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/XML2 (main)
+$ vim new2.xml
+
+INSERT
+<student>
+        <name>Kusmartsev</name>
+        <age>46</age>
+        <pets>0</pets>
+        <salary>
+                <amount>1000</amount>
+                <currency>usd<currency>
+        </salary>
+</student>
+Esc
+:wq
+
+ 28. Отправить изменения на внешний репозиторий.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/XML2 (main)
+$ git add new2.xml
+warning: LF will be replaced by CRLF in new2.xml.
+The file will have its original line endings in your working directory
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/XML2 (main)
+$ git commit -m "file commits"
+[main cc7c225] file commits
+ 1 file changed, 9 insertions(+)
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/XML2 (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 378 bytes | 42.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Kusmartsev/XML2.git
+   d5a1139..cc7c225  main -> main
+
+ 29. Создать файл preferences2.xml
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/XML2 (main)
+$ touch preferences2.xml
+
+ 30. В файл preferences.xml добавить информацию 
+о своих предпочтениях (Любимый фильм, любимый сериал, 
+любимая еда, любимое время года, сторона которую хотели бы посетить) в формате XML.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/XML2 (main)
+$ vim preferences2.xml
+
+<preferences>
+        <favourites>
+           <movie>silence of the lsmbs</movie>
+           <serial>big bang theory</serial>
+           <food>spaghetty</food>
+           <season>summer</season>
+        </favourites>
+        <country>chile</country>
+</preferences>
+
+ 31. Создать файл sklls2.xml добавить информацию 
+о скиллах которые будут изучены на курсе в формате XML
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/XML2 (main)
+$ vim skills2.xml
+
+<skills>
+        <skill01>Git</skill01>
+        <skill02>GitHub</skill02>
+        <skill03>Jmeter</skill03>
+        <skill04>Charles</skill04>
+        <skill05>Fiddler</skill05>
+        <skill06>Dev Tools</skill06>
+</skills>
+
+ 32. Сделать коммит в одну строку.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/XML2 (main)
+$ git add .
+warning: LF will be replaced by CRLF in preferences2.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in skills2.xml.
+The file will have its original line endings in your working directory
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/XML2 (main)
+$ git commit -m "2 files add"
+[main bd409f0] 2 files add
+ 2 files changed, 17 insertions(+)
+ create mode 100644 preferences2.xml
+ create mode 100644 skills2.xml
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/XML2 (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 580 bytes | 64.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Kusmartsev/XML2.git
+   cc7c225..bd409f0  main -> main
+
+ 34. На веб интерфейсе создать файл bug_report2.xml.
+
+<bugreport>
+  <title>not possible to choose a delivery method</title>
+  <id>01</id>
+  <author>Kusmartsev</author>
+  <Stepstoreproduce>
+    <step01>Select an item in the catalog</step02>
+    <step02>add the item to the cart</step02>
+    <step03>pay for the item by the 'Chekout' button</step03>
+    <step04>click on the 'Delivery method' button</step04>
+  </Stepstoreproduce>
+  <actualresult>nothing happens on the page</actualresult>
+  <expectedresult>the user chooses the delivery method</expectresult>
+  <severity>blocker</severity>
+</bugreport>
+
+ 35. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+ 36. На веб интерфейсе модифицировать файл bug_report2.xml, 
+добавить баг репорт в формате XML.
+ 37. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+ 38. Синхронизировать внешний и локальный репозиторий XML.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/XML2 (main)
+$ git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), 1.51 KiB | 27.00 KiB/s, done.
+From https://github.com/Kusmartsev/XML2
+   bd409f0..54cd516  main       -> origin/main
+Updating bd409f0..54cd516
+Fast-forward
+ bug_report2.xml | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+ create mode 100644 bug_report2.xml
+
+ 
+-------------------------------------------------------
+
+1. Создать внешний репозиторий c названием TXT2.
+
+https://github.com/Kusmartsev/TXT2.git
+
+ 2. Клонировать репозиторий TXT на локальный компьютер.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/XML2 (main)
+$ git clone https://github.com/Kusmartsev/TXT2.git
+Cloning into 'TXT2'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+ 3. Внутри локального TXT создать файл “new.txt”.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/TXT2 (main)
+$ touch new2.txt
+
+ 4. Добавить файл под гит.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/TXT2 (main)
+$ git add new2.txt
+
+ 5. Закоммитить файл.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/TXT2 (main)
+$ git commit -m "text file commit"
+[main b27f622] text file commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 new2.txt
+
+ 6. Отправить файл на внешний GitHub репозиторий.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/TXT2 (main)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 277 bytes | 39.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Kusmartsev/TXT2.git
+   92cf7c9..b27f622  main -> main
+
+ 7. Отредактировать содержание файла “new2.txt” - 
+написать информацию о себе (ФИО, возраст, количество домашних животных, 
+будущая желаемая зарплата). Всё написать в формате TXT.
+
+INSERT
+1. Name: Kusmartsev
+2. Age: 46
+3. Pets: 0
+4. Salary: 1000
+Esc
+:wq
+
+ 8. Отправить изменения на внешний репозиторий.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/TXT2 (main)
+$ git commit -am "changes new2.txt"
+warning: LF will be replaced by CRLF in new2.txt.
+The file will have its original line endings in your working directory
+[main 01356fe] changes new2.txt
+ 1 file changed, 4 insertions(+)
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/TXT2 (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 336 bytes | 42.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Kusmartsev/TXT2.git
+   b27f622..01356fe  main -> main
+
+ 9. Создать файл preferences.txt
+
+\user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/TXT2 (main)
+$ vim preferences2.txt
+
+ 10. В файл preferences.txt” добавить информацию 
+о своих предпочтениях (Любимый фильм, любимый сериал, 
+любимая еда, любимое время года, сторона которую хотели бы посетить) в формате TXT.
+
+Favourite movie: "Silence of the lambs",
+Favouite serial: "Bbig bang theory",
+Favourite food: spaghetty,
+Favourite season: summer,
+Contry must see: Chile
+
+ 11. Создать файл sklls2.txt добавить информацию 
+о скиллах которые будут изучены на курсе в формате TXT
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/TXT2 (main)
+$ vim sklls2.txt
+
+Skills: Git, GitHub, Jmeter, Charles, Fiddler, Dev Tools, Android Studio
+
+ 12. Сделать коммит в одну строку.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/TXT2 (main)
+$ git add .
+warning: LF will be replaced by CRLF in preferences2.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in sklls2.txt.
+The file will have its original line endings in your working directory
+
+ 13. Отправить сразу 2 файла на внешний репозиторий.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/TXT2 (main)
+$ git commit -m "commiting txt files"
+[main ab59110] commiting txt files
+ 2 files changed, 6 insertions(+)
+ create mode 100644 preferences2.txt
+ create mode 100644 sklls2.txt
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/TXT2 (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 535 bytes | 66.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Kusmartsev/TXT2.git
+   01356fe..ab59110  main -> main
+
+ 14. На веб интерфейсе создать файл bug_report2.txt.
+ 15. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+ 16. На веб интерфейсе модифицировать файл bug_report.txt, добавить баг
+ репорт в формате TXT.
+ 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/TXT2 (main)
+$ git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), 1.47 KiB | 22.00 KiB/s, done.
+From https://github.com/Kusmartsev/TXT2
+   ab59110..6272816  main       -> origin/main
+Updating ab59110..6272816
+Fast-forward
+ bug_report2.txt | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+ create mode 100644 bug_report2.txt
+
+ 18. Синхронизировать внешний и локальный репозиторий TXT

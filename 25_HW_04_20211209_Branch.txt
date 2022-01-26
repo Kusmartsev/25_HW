@@ -1,0 +1,183 @@
+GitHub. HW_2
+1. На локальном репозитории сделать ветки для:
+- Postman
+- Jmeter
+- CheckLists
+- Bag Reports
+- SQL
+- Charles
+- Mobile testing
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (main)
+$ git branch postman
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (main)
+$ git branch jmeter
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (main)
+$ git branch checklists
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (main)
+$ git branch bugreports
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (main)
+$ git branch sql
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (main)
+$ git branch charles
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (main)
+$ git branch mobiletesting
+
+
+2. Запушить все ветки на внешний репозиторий
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (main)
+$ git push -u origin bugreports charles checklists jmeter mobiletesting postman sql
+Enter passphrase for key '/c/Users/user/.ssh/id_rsa':
+Everything up-to-date
+Branch 'bugreports' set up to track remote branch 'bugreports' from 'origin'.
+Branch 'charles' set up to track remote branch 'charles' from 'origin'.
+Branch 'checklists' set up to track remote branch 'checklists' from 'origin'.
+Branch 'jmeter' set up to track remote branch 'jmeter' from 'origin'.
+Branch 'mobiletesting' set up to track remote branch 'mobiletesting' from 'origin'.
+Branch 'postman' set up to track remote branch 'postman' from 'origin'.
+Branch 'sql' set up to track remote branch 'sql' from 'origin'.
+
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (bugreports)
+$ vim bugreport.txt
+
+1. ID
+2. Author
+3. Title
+4. Summary
+5. Steps to reproduce
+6. Actual result
+7. Expected result
+8. Severity
+
+4. Запушить структуру багрепорта на внешний репозиторий
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (bugreports)
+$ git commit -m "bugreport"
+[bugreports e65af60] bugreport
+ 1 file changed, 9 insertions(+)
+ create mode 100644 bugreport.txt
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (bugreports)
+$ git push
+Enter passphrase for key '/c/Users/user/.ssh/id_rsa':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 336 bytes | 67.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Kusmartsev/25_20211210_HW3_Branch.git
+   b33cd1f..e65af60  bugreports -> bugreports
+
+5. Вмержить ветку Bag Reports в Main
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (main)
+$ git merge bugreports
+Updating b33cd1f..e65af60
+Fast-forward
+ bugreport.txt | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+ create mode 100644 bugreport.txt
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (main)
+$ ls
+bugreport.txt
+
+6. Запушить main на внешний репозиторий.
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (main)
+$ git push
+Enter passphrase for key '/c/Users/user/.ssh/id_rsa':
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Kusmartsev/25_20211210_HW3_Branch.git
+   b33cd1f..e65af60  main -> main
+
+7. В ветке CheckLists набросать структуру чек листа.
+
+Чеклист "Покупка товара в интернет-магазине"
+
+1. Название
+2. Проверка
+3. Результат прохождения проверки
+4. Фактический результат
+4. Комментарий
+
+8. Запушить структуру на внешний репозиторий
+
+warning: LF will be replaced by CRLF in checklist1.txt.
+The file will have its original line endings in your working directory
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (checklists)
+$ git commit -m "adding checklist"
+[checklists 56a7cad] adding checklist
+ 1 file changed, 7 insertions(+)
+ create mode 100644 checklist1.txt
+git
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (checklists)
+$ git push
+Enter passphrase for key '/c/Users/user/.ssh/id_rsa':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 451 bytes | 64.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Kusmartsev/25_20211210_HW3_Branch.git
+   b33cd1f..56a7cad  checklists -> checklists
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+
+adding checklist #1
+ Merged
+Kusmartsev merged 1 commit into main from checklists now
++7 −0 
+ Conversation 0
+ Commits 1
+ Checks 0
+ Files changed 1
+Conversation
+@Kusmartsev
+ 
+Owner
+Kusmartsev commented 1 minute ago
+just pull request
+
+@Kusmartsev
+adding checklist
+56a7cad
+@Kusmartsev Kusmartsev merged commit 942ccf8 into main now
+
+10. Синхронизировать Внешнюю и Локальную ветки Main
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (main)
+$ ls
+bugreport.txt
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (main)
+$ git pull
+Enter passphrase for key '/c/Users/user/.ssh/id_rsa':
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (2/2), 711 bytes | 35.00 KiB/s, done.
+From github.com:Kusmartsev/25_20211210_HW3_Branch
+   e65af60..942ccf8  main       -> origin/main
+Updating e65af60..942ccf8
+Fast-forward
+ checklist1.txt | 7 +++++++
+ 1 file changed, 7 insertions(+)
+ create mode 100644 checklist1.txt
+
+user@WORKSTATION MINGW64 /d/2 Работа/Testing/Git-examples/25_20211210_HW3_Branch (main)
+$ ls
+bugreport.txt  checklist1.txt
